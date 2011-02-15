@@ -133,7 +133,7 @@
 		});
 		
 		// add msg view
-		var msgview = Ti.UI.createView({backgroundColor:"white",opacity:0,zIndex:10,width:platformWidth-100,left:50,top:200,height:100}),
+		var msgview = Ti.UI.createView({backgroundColor:"white",opacity:0,zIndex:10,width:platformWidth-100,left:50,top:230,height:100}),
 			msglabel = Ti.UI.createLabel($$.Label);
 		msgview.add(msglabel);
 		Ti.App.addEventListener("app:msg",function(e){

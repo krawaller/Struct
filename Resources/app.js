@@ -16,4 +16,4 @@ S.app.mainWindow.open();
 
 S.app.mood = "RADIANT!";
 Ti.App.fireEvent("app:mood.update");
-Ti.App.fireEvent("app:msg",{msg:"Welcome!"});
+setTimeout(function(){Ti.App.fireEvent("app:msg",{msg:"Welcome!"});},1000);
