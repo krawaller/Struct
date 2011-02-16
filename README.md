@@ -1,0 +1,1 @@
+This is a stripped-down (and slightly modified) version of Tweetanium, with the purpose of demonstrating the new structure paradigm.
