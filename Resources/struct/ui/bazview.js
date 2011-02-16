@@ -12,11 +12,19 @@
 			textbox = Ti.UI.createTextField(S.combine({top:50,left:10,right:10,value:"radiant"},$$.TextField)),
 			button = Ti.UI.createButton(S.combine({title:"Become!",top:130,height:30,width:150},$$.button));
 		button.addEventListener("click",function(){
+			textbox.blur();
+			if (!textbox.value){
+				Ti.App.fireEvent("app:msg",{msg:"Must enter a mood!",error:true});
+				return;
+			}
+			if (textbox.value === S.app.mood){
+				Ti.App.fireEvent("app:msg",{msg:"You already are "+S.app.mood+"!",error:true});
+				return;
+			}
 			S.app.mood = textbox.value;
 			Ti.API.log("MOOD SET TO "+S.app.mood);
 			Ti.App.fireEvent("app:mood.update");
 			Ti.App.fireEvent("app:msg",{msg:"Awright! :)"});
-			textbox.blur();
 		});
 		view.add(textbox);
 		view.add(button); 

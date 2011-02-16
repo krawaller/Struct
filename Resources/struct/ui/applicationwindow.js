@@ -85,7 +85,6 @@
 				if (_idx === i) {
 					//if the tab is already selected, do nothing
 					if (!tabs[i].on) {
-						Ti.API.info('selecting tab index: '+_idx);
 						//animate the tab
 						tab.animate({
 							duration:$$.animationDuration,
@@ -133,12 +132,13 @@
 		});
 		
 		// add msg view
-		var msgview = Ti.UI.createView({backgroundColor:"white",opacity:0,zIndex:10,width:platformWidth-100,left:50,top:230,height:100}),
+		var msgview = Ti.UI.createView({opacity:0,zIndex:10,width:platformWidth-100,left:50,top:230,height:100}),
 			msglabel = Ti.UI.createLabel($$.Label);
 		msgview.add(msglabel);
 		Ti.App.addEventListener("app:msg",function(e){
 			Ti.API.log(e);
 			msglabel.text = e.msg;
+			msgview.backgroundColor = e.error ? "red" : "white";
 			msgview.opacity = 1;
 			msgview.animate({
 				opacity: 0,

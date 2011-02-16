@@ -48,7 +48,8 @@
 		TextField: {
 			height:55,
 			borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
-			color:'#000000'
+			color:'#000000',
+			clearButtonMode: Titanium.UI.INPUT_BUTTONMODE_ALWAYS
 		},
 		headerView: {
 			backgroundColor:'#CCC',

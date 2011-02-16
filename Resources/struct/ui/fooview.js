@@ -8,6 +8,8 @@
 
 (function(){
 	S.ui.createFooView = function(){
-		return Ti.UI.createView({backgroundColor: "red"});
+		var view = Ti.UI.createView({backgroundColor: "red"});
+		view.add(Ti.UI.createLabel(S.combine({text: "See blogpost @ http://blog.krawaller.se"},$$.Label)));
+		return view;
 	};
 })();
