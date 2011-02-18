@@ -25,7 +25,7 @@
 		//grab platform dimensions only once to save a trip over the bridge
 		platformWidth: Ti.Platform.displayCaps.platformWidth,
 		platformHeight: Ti.Platform.displayCaps.platformHeight,
-		
+		animationDuration: 300,
 		//we use these for default components
 		Button: {
 			height:50,
