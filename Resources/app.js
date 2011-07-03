@@ -11,8 +11,8 @@ Titanium.UI.setBackgroundColor('#000');
 
 Ti.include("/struct/struct.js");
 
-S.app.mainWindow = S.ui.createApplicationWindow();
-S.app.mainWindow.open();
+S.app.mainTabGroup = S.ui.createApplicationTabGroup();
+S.app.mainTabGroup.open();
 
 S.app.mood = "RADIANT!";
 Ti.App.fireEvent("app:mood.update");
