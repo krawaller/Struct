@@ -29,6 +29,19 @@
 			window: S.ui.createBazWin()
 		}));
 
+		var msgmodal = Ti.UI.createView({backgroundColor:"#000",opacity:0.7,visible:false}),
+			msgpanel = Ti.UI.createView({backgroundColor:"yellow",height:150,width:200,top:150,opacity:1}),
+			msglabel = Ti.UI.createLabel({text:"FOO!",textAlign:"center"});
+		msgmodal.addEventListener("click",function(){msgmodal.visible = false;});
+		msgpanel.add(msglabel);
+		msgmodal.add(msgpanel);
+		tabgroup.add(msgmodal);
+		
+		Ti.App.addEventListener("app:msg",function(e){
+			msglabel.text = e.msg;
+			msgmodal.visible = true;
+		});
+
 		return tabgroup;
 	};
 })();
